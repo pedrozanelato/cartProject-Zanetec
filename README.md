@@ -47,8 +47,7 @@ DB_USERNAME=root
 DB_PASSWORD=senha
 ```
 
-# Crie o banco no MySQL
-# e então:
+# Execute oscomando para criar o banco e popular:
 
 ```bash
 php artisan migrate
