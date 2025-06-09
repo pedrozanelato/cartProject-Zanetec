@@ -65,4 +65,4 @@ php artisan serve
 ## 📡 APIs & Documentação
 Endpoints REST para interação com os módulos Product, Cart e Order.
 
-- **Postman:** [Collection](https://myapisdev.postman.co/workspace/API's-Dev~ff4a4532-78d2-46cf-bde2-07f77c1557b7/collection/17224712-85874a7c-e078-432c-b8d8-27a59635ac77?action=share&creator=17224712)
+- **Postman:** [Collection](myapisdev.postman.co/workspace/API's-Dev~ff4a4532-78d2-46cf-bde2-07f77c1557b7/collection/17224712-356bd2a4-4b56-4a62-879b-2028a1897074?action=share&creator=17224712)
