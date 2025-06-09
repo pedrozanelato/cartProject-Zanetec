@@ -276,6 +276,7 @@ function loadCartCheckout() {
 }
 
 function showEmptyCart() {
+            hideLoading();
     $('#empty-cart').show();
 }
 
