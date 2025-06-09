@@ -47,7 +47,7 @@ DB_USERNAME=root
 DB_PASSWORD=senha
 ```
 
-# Execute oscomando para criar o banco e popular:
+# Execute os comando para criar o banco e popular:
 
 ```bash
 php artisan migrate
