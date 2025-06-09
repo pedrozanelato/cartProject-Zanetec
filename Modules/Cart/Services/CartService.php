@@ -49,16 +49,10 @@ class CartService implements CartServiceInterface
         if ($cart->expires_at && now()->greaterThan($cart->expires_at)) {
             $cart->expires_at = now()->addHours(12);
             $cart->save();
-            
-            return response()->json([
-                "cart_token" => $cart->session_token
-            ])->cookie('cart_token', $cart->session_token, 60 * 12);
-        }else{
-            
-            return response()->json([
-                "cart_token" => $cart->session_token
-            ]);
         }
+        return response()->json([
+            "cart_token" => $cart->session_token
+        ])->cookie('cart_token', $cart->session_token, 60 * 12);
     }
     
     /**
