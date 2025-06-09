@@ -62,3 +62,8 @@ php artisan module:seed Product
 php artisan serve
 # => http://127.0.0.1:8000
 ```
+
+## ▶️ Chamadas via API
+# Documentação e Collection Api
+
+Postman: [Collection](https://myapisdev.postman.co/workspace/API's-Dev~ff4a4532-78d2-46cf-bde2-07f77c1557b7/collection/17224712-85874a7c-e078-432c-b8d8-27a59635ac77?action=share&creator=17224712)
