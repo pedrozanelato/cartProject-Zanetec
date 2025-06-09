@@ -39,6 +39,12 @@ class OrderService implements OrderServiceInterface
 
         $totalValue = $this->cartService->getCartTotal($cart, $orderDto->paymentMethod, $orderDto->times);
 
+        exception(
+            condition:$totalValue <= 0,
+            message: 'O carrinho está vazio.',
+            code: Response::HTTP_NOT_ACCEPTABLE
+        );
+
         $orderDto->totalValue = $totalValue;
         $order = new Order($orderDto->getFillable());
 
