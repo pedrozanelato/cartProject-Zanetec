@@ -191,9 +191,9 @@ function updateQuantity(itemId, newQuantity) {
             },
             error: function() {
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Erro!',
-                    text: 'Erro ao atualizar a quantidade do produto'
+                    icon: 'warning',
+                    title: 'Ops!',
+                    text: 'Não foi possível atualizar a quantidade do produto'
                 });
             }
         });

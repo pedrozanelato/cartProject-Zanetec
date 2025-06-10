@@ -33,7 +33,7 @@ class OrderService implements OrderServiceInterface
         
         exception(
             condition: empty($cart),
-            message: 'Não foi possível recuperar o carrinho.',
+            message: 'O carrinho está vazio.',
             code: Response::HTTP_NOT_ACCEPTABLE
         );
 
@@ -87,32 +87,6 @@ class OrderService implements OrderServiceInterface
                 message: 'Não foi possível criar o pedido.',
                 code: Response::HTTP_NOT_ACCEPTABLE
             );
-        }
-    }
-
-    public function init(): JsonResponse
-    {
-        $token = session('order_token') 
-            ?? request()->cookie('order_token') 
-            ?? tap(Str::uuid()->toString(), fn($t) => session(['order_token' => $t]));
-
-        $order = Order::firstOrCreate(
-            ['session_token' => $token],
-            ['expires_at' => now()->addHours(12)]
-        );
-
-        if ($order->expires_at && now()->greaterThan($order->expires_at)) {
-            $order->expires_at = now()->addHours(12);
-            $order->save();
-            
-            return response()->json([
-                "cart_token" => $cart->session_token
-            ])->cookie('cart_token', $cart->session_token, 60 * 12);
-        }else{
-            
-            return response()->json([
-                "cart_token" => $cart->session_token
-            ]);
         }
     }
     

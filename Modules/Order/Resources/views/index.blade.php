@@ -348,11 +348,11 @@ function calculatePayment(paymentMethod, times = null) {
         }
         else{
             
-            showAlert('Não foi possível calcular pagamento', 'danger');
+            showAlert('Não foi possível calcular o pagamento', 'warning');
         }
     })
     .fail(function() {
-        showAlert('Erro ao calcular pagamento', 'danger');
+        showAlert('Não foi possível calcular o pagamento', 'warning');
     });
 }
 

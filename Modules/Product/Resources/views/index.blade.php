@@ -60,7 +60,7 @@ function initCart() {
         .done(function(response) {
         })
         .fail(function() {
-            console.log('Erro ao buscar contagem do carrinho');
+            console.log('Erro ao criar carrinho');
     });
 }
 
@@ -85,7 +85,7 @@ function loadProducts(page) {
     })
     .fail(function() {
         hideLoading();
-        showAlert('Erro ao carregar produtos. Tente novamente.', 'danger');
+        showAlert('Não foi possível carregar os produtos. Tente novamente.', 'warning');
     });
 }
 
@@ -239,9 +239,9 @@ function addToCart(productId) {
         button.disabled = false;
         
         Swal.fire({
-            icon: 'error',
-            title: 'Erro!',
-            text: 'Erro ao adicionar produto ao carrinho'
+            icon: 'warning',
+            title: 'Ops!',
+            text: 'Não foi possível adicionar o produto ao carrinho.'
         });
     });
 }
